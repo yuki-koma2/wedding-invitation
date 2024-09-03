@@ -12,6 +12,9 @@ concurrency:
 jobs:
   lint:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./invitation-nextjs
 
     steps:
       - name: Checkout code
