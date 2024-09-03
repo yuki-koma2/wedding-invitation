@@ -1,0 +1,33 @@
+name: before-merge
+
+on:
+  pull_request:
+    branches:
+      - main
+
+concurrency:
+  group: ${{ github.ref }}-lint
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./invitation-nextjs
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+#          bun-version-file: ".bun-version" TODO: この指定におきかえる
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Run Lint
+        run: bun run lint
