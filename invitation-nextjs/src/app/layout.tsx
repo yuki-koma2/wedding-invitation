@@ -17,11 +17,27 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
+        <head>
+            <meta charSet="utf-8"/>
+            <meta name="viewport" content="width=device-width, initial-scale=1"/>
+            {/*<meta name="description" content={metadata.description}/>*/}
+            {/*<title>{metadata.title}</title>*/}
+            <link rel="icon" href="/favicon.ico"/>
+            <link rel="preconnect" href="https://fonts.googleapis.com"/>
+            <link rel="preconnect" href="https://fonts.gstatic.com"/>
+            <link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap" rel="stylesheet"/>
+            <link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap" rel="stylesheet"/>
+            <link href="https://fonts.googleapis.com/css2?family=Petit+Formal+Script&display=swap" rel="stylesheet"/>
+            <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700;800&display=swap"
+                  rel="stylesheet"/>
+            <link href="https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&display=swap" rel="stylesheet"/>
+
+        </head>
         <body className={inter.className}>
         <Providers>
             {children}
         </Providers>
         </body>
         </html>
-    );
+);
 }
