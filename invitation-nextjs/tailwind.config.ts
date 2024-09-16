@@ -15,6 +15,20 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      keyframes: {
+        growProgress: {
+          '0%': { transform: 'scaleY(0)' },
+          '100%': { transform: 'scaleY(1)' },
+        },
+        revealImage: {
+          '0%': { 'clip-path': 'inset(30% round 20%)' },
+          '100%': { 'clip-path': 'inset(0)' },
+        },
+      },
+      animation: {
+        growProgress: 'growProgress 1s linear forwards',
+        revealImage: 'revealImage 1s ease-out forwards',
+      },
     },
   },
   darkMode: "class",
