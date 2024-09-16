@@ -1,5 +1,5 @@
 import React from 'react';
-import {Image} from "@nextui-org/react";
+import {Image, Spacer} from "@nextui-org/react";
 
 
 const HogePage = () => {
@@ -46,7 +46,7 @@ const HogePage = () => {
                 </div>
             </section>
 
-            <section className="bg-orange-100 bg-cover bg-center"
+            <section className="bg-orange-100 bg-cover bg-center py-8 px-2"
                      style={{backgroundImage: 'url(img/bg-2.jpg)'}}
             >
                 {/*<Image*/}
@@ -72,13 +72,20 @@ const HogePage = () => {
                 {/*    おいそがしい中と存じますが <br/>*/}
                 {/*    ご列席くださいますようお願い申し上げます <br/>*/}
                 {/*</p>*/}
-                <p className="p-8 font-klee font-bold text-gray-500 text-center">
-                    皆様にはご健勝のこととお慶び申し上げます <br/>
-                    このたび 私たちは結婚式を挙げることになりました <br/>
-                    つきましては 親しい皆様の末永いお力添えをいただきたく <br/>
-                    心ばかりの小宴をもうけたいと存じます <br/>
-                    おいそがしい中と存じますが <br/>
-                    ご列席くださいますようお願い申し上げます <br/>
+                <p className="font-klee font-bold text-gray-500 text-center ">
+                    皆様にはご健勝のこととお慶び申し上げます<br/>
+                    {/*<br className="block sm:hidden"/>*/}
+                    <Spacer y={1} className="block sm:hidden"/>
+                    このたび<br className="block sm:hidden"/> 私たちは結婚式を挙げることになりました<br/>
+                    {/*<br className="block sm:hidden"/>*/}
+                    <Spacer y={1} className="block sm:hidden"/>
+                    つきましては <br className="block sm:hidden"/>
+                    親しい皆様の末永いお力添えをいただきたく<br/>
+                    心ばかりの小宴をもうけたいと存じます<br/>
+                    {/*<br className="block sm:hidden"/>*/}
+                    <Spacer y={1} className="block sm:hidden"/>
+                    おいそがしい中と存じますが<br/>
+                    ご列席くださいますようお願い申し上げます
                 </p>
             </section>
 
