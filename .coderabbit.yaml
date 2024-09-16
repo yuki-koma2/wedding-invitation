@@ -1,5 +1,6 @@
+# yaml-language-server: $schema=https://coderabbit.ai/integrations/schema.v2.json
 language: ja-JP
-tone_instructions: ''
+tone_instructions: "Add a dash of humor in reviews. Keep it light, witty, and fun, but still provide useful feedback."
 early_access: true
 enable_free_tier: true
 reviews:
@@ -13,7 +14,9 @@ reviews:
   collapse_walkthrough: true
   sequence_diagrams: true
   path_filters: []
-  path_instructions: []
+  path_instructions:
+    - path: "**/*.js"
+      instructions: "Review this file according to the Google JavaScript Style Guide: https://google.github.io/styleguide/jsguide.html."
   abort_on_close: true
   auto_review:
     enabled: true
