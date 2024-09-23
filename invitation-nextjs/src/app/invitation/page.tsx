@@ -152,18 +152,6 @@ const HogePage = () => {
                 <p>お手数ではございますがご都合のほどを11月2日までにご一報賜りますようお願い申し上げます。</p>
             </section>
 
-            <section className="border-y-green-400 flex justify-center flex-col items-center py-10">
-
-                <h1>Hello from Hoge Page!</h1>
-                <p>This is a sample page using Next.js App Router.</p>
-                <Image
-                    isBlurred
-                    width={240}
-                    src="https://nextui-docs-v2.vercel.app/images/album-cover.png"
-                    alt="NextUI Album Cover"
-                    className="m-5"
-                />
-            </section>
         </main>
     );
 };
