@@ -2,10 +2,10 @@ import React from 'react';
 import {Image, Spacer} from "@nextui-org/react";
 
 
-const HogePage = () => {
+const FamilyPage = () => {
     return (
         <main
-            className="bg-white bg-center bg-cover bg-fixed"
+            className="bg-white bg-cover bg-center"
             style={{backgroundImage: 'url(img/bg-2.jpg)'}}
         >
 
@@ -45,11 +45,14 @@ const HogePage = () => {
                         yuki & natsumi
                     </p>
 
+                    <p className="font-shadows text-3xl text-white text-center pt-3">
+                        親族向けページ
+                    </p>
 
                 </div>
             </section>
 
-            <section className=" py-8 px-2">
+            <section>
                 {/*<Image*/}
                 {/*    isBlurred*/}
                 {/*    // width={240}*/}
@@ -128,9 +131,7 @@ const HogePage = () => {
             {/*    </div>*/}
             {/*</div>*/}
 
-            <section className="
-            flex justify-center flex-col items-center font-klee font-bold text-gray-500 text-center
-           ">
+            <section className=" flex justify-center flex-col items-center font-klee font-bold text-gray-500 text-center">
                 <h1 className="font-petit text-3xl text-gray-500">Information</h1>
                 <p>日時： 令和６年12月1日(日)</p>
                 <p>受付： 13時30分</p>
@@ -148,7 +149,7 @@ const HogePage = () => {
                 </div>
             </section>
 
-            <section className=" p-4 font-klee font-bold text-gray-500 text-center">
+            <section className="bg-white p-4 font-klee font-bold text-gray-500 text-center">
                 <p>お手数ではございますがご都合のほどを11月2日までにご一報賜りますようお願い申し上げます。</p>
             </section>
 
@@ -168,4 +169,4 @@ const HogePage = () => {
     );
 };
 
-export default HogePage;
+export default FamilyPage;
