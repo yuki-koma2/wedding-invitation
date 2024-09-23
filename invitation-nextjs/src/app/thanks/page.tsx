@@ -10,7 +10,7 @@ const ThanksPage = () => {
             <h1 className="font-petit text-6xl p-3">Thanks </h1>
 
             <img src={`img/header.jpeg`}
-                 loading="lazy" alt="Photo"
+                 loading="lazy" alt="結婚指輪と花束"
                  className="w-full object-cover object-center"/>
         </main>
     )
