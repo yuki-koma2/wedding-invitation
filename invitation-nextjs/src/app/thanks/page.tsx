@@ -1,8 +1,7 @@
 const ThanksPage = () => {
     return (
         <main
-            className="bg-white bg-center bg-cover bg-fixed h-screen "
-            style={{backgroundImage: 'url(img/bg-2.jpg)'}}
+            className="bg-white bg-center bg-cover bg-fixed h-screen bg-[url('/img/bg-2.jpg')]"
             aria-label="結婚式の招待状の背景画像"
         >
 
@@ -10,7 +9,8 @@ const ThanksPage = () => {
 
             <img src={`img/header.jpeg`}
                  loading="lazy" alt="結婚指輪と花束"
-                 className="w-full object-cover object-center"/>
+                 className="w-full object-cover object-center rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300"
+            />
         </main>
     )
 }
