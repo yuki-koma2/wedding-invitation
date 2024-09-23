@@ -143,12 +143,16 @@ const HogePage = () => {
                     {/*google map*/}
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.651404047731!2d139.7498723152586!3d35.67954838019352!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188b5a3c2f8d4f%3A0x2f6b8b4e3f5d1b6e!2z5p2x5Lqs44Kk44Oq44K_44Oz44K_44O8!5e0!3m2!1sja!2sjp!4v1635736820004!5m2!1sja!2sjp"
-                        width="350" height="350" style={{border: 0}} allowFullScreen loading="lazy"/>
+                        width="350" height="350" style={{border: 0}} allowFullScreen loading="lazy"
+                        title="東京大神宮の地図"
+                    />
 
                 </div>
             </section>
 
-            <section className=" p-4 font-klee font-bold text-gray-500 text-center">
+            {/*<section className=" p-4 font-klee font-bold text-gray-500 text-center">*/}
+            <section
+                className="bg-white p-4 font-klee font-bold text-gray-500 text-center border-2 border-gray-200 rounded-lg shadow-sm">
                 <p>お手数ではございますがご都合のほどを11月2日までにご一報賜りますようお願い申し上げます。</p>
             </section>
 
