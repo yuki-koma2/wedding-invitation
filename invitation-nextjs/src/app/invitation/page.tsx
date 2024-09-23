@@ -5,8 +5,8 @@ import {Image, Spacer} from "@nextui-org/react";
 const HogePage = () => {
     return (
         <main
-            className="bg-white bg-center bg-cover bg-fixed"
-            style={{backgroundImage: 'url(img/bg-2.jpg)'}}
+            className="bg-white bg-center bg-cover bg-fixed bg-[url('/img/bg-2.jpg')]"
+            aria-label="結婚式の招待状の背景画像"
         >
 
             <section
