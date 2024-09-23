@@ -6,7 +6,7 @@ const ThanksPage = () => {
             aria-label="結婚式の招待状の背景画像"
         >
 
-            <h1 className="font-petit text-6xl p-3">Thanks </h1>
+            <h1 className="font-petit text-6xl p-3">ご出席ありがとうございました.</h1>
 
             <img src={`img/header.jpeg`}
                  loading="lazy" alt="結婚指輪と花束"
