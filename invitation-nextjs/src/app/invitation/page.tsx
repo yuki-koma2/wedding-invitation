@@ -4,7 +4,12 @@ import {Image, Spacer} from "@nextui-org/react";
 
 const HogePage = () => {
     return (
-        <main>
+        <main
+            className={`bg-white bg-center bg-cover bg-fixed
+                        sm:bg-contain md:bg-cover 
+                        bg-[url('/img/bg-2.jpg')]`}
+            aria-label="結婚式の招待状の背景画像"
+        >
 
             <section
                 className="
@@ -13,10 +18,22 @@ const HogePage = () => {
                 {/*animate-blurFadeOut*/}
                 {/*[animation-range:0px_300px] [animation-timeline:scroll()]*/}
                 {/*[animation-duration:5s] [animation-timing-function:ease-out]*/}
-                <img src={`img/header.jpeg`}
-                     loading="lazy" alt="Photo"
+                <img  src={`/img/header.jpeg`}
+                     loading="lazy"
+                      alt="結婚指輪と花束"
                      className="absolute inset-0 h-full w-full object-cover object-center"/>
-                <div className="absolute inset-0 bg-gray-300 mix-blend-multiply"></div>
+                {/*<Image*/}
+                {/*    src={`/img/header.jpeg`}*/}
+                {/*    // loading="lazy"*/}
+                {/*    // className="absolute inset-0 h-full w-full object-cover object-center"*/}
+                {/*    // width={1200}*/}
+                {/*    // height={630}*/}
+                {/*    loading="lazy"*/}
+                {/*    alt="結婚指輪と花束"*/}
+                {/*    className="absolute inset-0 h-full w-full object-cover object-center"*/}
+                {/*    // className="absolute w-full object-cover object-center rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300"*/}
+                {/*/>*/}
+                <div className="absolute inset-0 bg-gray-300 mix-blend-multiply"/>
                 {/*<div className="absolute inset-0 bg-black mix-blend-multiply*/}
                 {/*animate-fadeOut [animation-range:0px_100px] [animation-timeline:scroll()]*/}
                 {/*[animation-duration:1s] [animation-timing-function:ease-out]*/}
@@ -46,9 +63,7 @@ const HogePage = () => {
                 </div>
             </section>
 
-            <section className="bg-orange-100 bg-cover bg-center py-8 px-2"
-                     style={{backgroundImage: 'url(img/bg-2.jpg)'}}
-            >
+            <section className=" py-8 px-2">
                 {/*<Image*/}
                 {/*    isBlurred*/}
                 {/*    // width={240}*/}
@@ -127,16 +142,38 @@ const HogePage = () => {
             {/*    </div>*/}
             {/*</div>*/}
 
+            <section className="
+            flex justify-center flex-col items-center font-klee font-bold text-gray-500 text-center
+           ">
+                <h1 className="font-petit text-3xl text-gray-500">Information</h1>
+                <p>日時： 令和６年12月1日(日)</p>
+                <p>受付： 13時30分</p>
+                <p>挙式： 14時00分</p>
+                <p>披露宴: 15時00分</p>
+                <p>場所: 東京大神宮</p>
+                <p>住所： 東京都千代田区富士見２丁目４の１</p>
+                <p>電話番号： 03-3234-6611</p>
+                <div className="flex justify-center">
+                    {/*google map*/}
+                    <div className="w-full max-w-xl aspect-square">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.651404047731!2d139.7498723152586!3d35.67954838019352!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188b5a3c2f8d4f%3A0x2f6b8b4e3f5d1b6e!2z5p2x5Lqs44Kk44Oq44K_44Oz44K_44O8!5e0!3m2!1sja!2sjp!4v1635736820004!5m2!1sja!2sjp"
+                            className="w-full h-full"
+                            style={{border: 0}}
+                            allowFullScreen
+                            loading="lazy"
+                            title="東京大神宮の地図"
+                        />
+                    </div>
+                </div>
+            </section>
 
-            <h1>Hello from Hoge Page!</h1>
-            <p>This is a sample page using Next.js App Router.</p>
-            <Image
-                isBlurred
-                width={240}
-                src="https://nextui-docs-v2.vercel.app/images/album-cover.png"
-                alt="NextUI Album Cover"
-                className="m-5"
-            />
+            {/*<section className=" p-4 font-klee font-bold text-gray-500 text-center">*/}
+            <section
+                className="bg-white p-4 font-klee font-bold text-gray-500 text-center border-2 border-gray-200 rounded-lg shadow-sm">
+                <p>お手数ではございますがご都合のほどを11月2日までご一報賜りますようお願い申し上げます。</p>
+            </section>
+
         </main>
     );
 };
