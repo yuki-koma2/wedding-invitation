@@ -69,12 +69,15 @@ devは開発環境でのmigrationを実行する。DDLを生成してくれる�
 
 ```bash
 # 初回のマイグレーション（データベースの基礎を築きます）
-npx prisma migrate dev --name init
+bun run migrate dev --name init
 
 # 2回目以降のマイグレーション（データベースの進化を続けます）
-npx prisma migrate dev
+bun run migrate dev
+
+# マイグレーション時に名前をつける
+bun run migrate:name
 
 # マイグレーションの状態確認（私たちの旅の記録をチェック）
-npx prisma migrate status
+bun run migrate status
 
 ```

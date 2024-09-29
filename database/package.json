@@ -8,6 +8,7 @@
     "studio": "prisma studio",
     "seed": "ts-node prisma/seed.ts",
     "migrate": "prisma migrate dev",
+    "migrate:name": "prisma migrate dev --name",
     "status": "prisma migrate status",
     "validate": "prisma validate",
     "version": "prisma -v",
