@@ -6,13 +6,15 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "prisma": "prisma",
     "studio": "prisma studio",
-    "seed": "ts-node prisma/seed.ts",
+    "seed": "ts-node prisma/seed/seed.ts",
+    "seed:mst": "ts-node prisma/seed/mst.seed.ts",
     "migrate": "prisma migrate dev",
     "migrate:name": "prisma migrate dev --name",
     "status": "prisma migrate status",
     "validate": "prisma validate",
     "version": "prisma -v",
-    "debug": "prisma debug"
+    "debug": "prisma debug",
+    "generate": "prisma generate"
   },
   "keywords": [],
   "author": "u-koma",

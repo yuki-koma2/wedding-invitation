@@ -44,3 +44,62 @@ model User {
 
   @@index([name], map: "IDX_USER_NAME")
 }
+
+model Guest {
+  id               Int              @id @default(autoincrement())
+  /// 名
+  firstName        String           @db.VarChar(255)
+  /// 姓
+  lastName         String           @db.VarChar(255)
+  /// 名のふりがな
+  firstNameKana    String           @db.VarChar(255)
+  /// 姓のふりがな
+  lastNameKana     String           @db.VarChar(255)
+  /// 新郎側か新婦側かを示す
+  side             Side
+  /// 郵便番号
+  postalCode       String?          @db.VarChar(7)
+  /// 都道府県コード（必須）
+  prefectureCode   Int
+  /// 市区町村
+  city             String?          @db.VarChar(255)
+  /// 丁目・番地・建物名など
+  addressLine      String?          @db.VarChar(255)
+  /// 電話番号
+  attendanceStatus AttendanceStatus @default(PENDING)
+
+  /// Ref: MstPrefCode
+  prefecture MstPrefCode @relation(fields: [prefectureCode], references: [code])
+
+  @@index([lastName, firstName], map: "IDX_GUEST_LASTNAME_FIRSTNAME")
+}
+
+model MstPrefCode {
+  /// 都道府県コード（主キー）
+  code         Int    @id
+  /// 都道府県名（最大50文字）
+  name         String @db.VarChar(50)
+  /// 都道府県名の略称（2文字）
+  abbreviation String @db.Char(2)
+
+  /// Ref: Guest
+  Guest Guest[]
+
+  @@map("mst_prefcode") // データベース上のテーブル名を"mst_prefcode"に設定
+}
+
+enum Side {
+  /// 新郎側
+  GROOM
+  /// 新婦側
+  BRIDE
+}
+
+enum AttendanceStatus {
+  /// 出席
+  ATTENDING
+  /// 欠席
+  NOT_ATTENDING
+  /// 未定
+  PENDING
+}
