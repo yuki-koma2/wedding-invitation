@@ -1,5 +1,7 @@
 # Database 
 
+- 参考 [Prisma](https://www.prisma.io/docs/orm/prisma-schema)
+
 
 ## Prisma Usage
 
