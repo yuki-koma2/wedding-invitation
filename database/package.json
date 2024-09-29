@@ -5,7 +5,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prisma": "prisma",
-    "seed": "ts-node prisma/seed.ts"
+    "studio": "prisma studio",
+    "seed": "ts-node prisma/seed.ts",
+    "migrate": "prisma migrate dev",
+    "status": "prisma migrate status",
+    "validate": "prisma validate",
+    "version": "prisma -v",
+    "debug": "prisma debug"
   },
   "keywords": [],
   "author": "u-koma",
