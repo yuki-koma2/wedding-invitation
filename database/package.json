@@ -1,0 +1,30 @@
+{
+  "name": "database",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prisma": "prisma",
+    "studio": "prisma studio",
+    "seed": "ts-node prisma/seed.ts",
+    "migrate": "prisma migrate dev",
+    "migrate:name": "prisma migrate dev --name",
+    "status": "prisma migrate status",
+    "validate": "prisma validate",
+    "version": "prisma -v",
+    "debug": "prisma debug"
+  },
+  "keywords": [],
+  "author": "u-koma",
+  "license": "MIT",
+  "description": "",
+  "devDependencies": {
+    "@types/node": "^22.7.4",
+    "prisma": "^5.20.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.2"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.20.0"
+  }
+}
