@@ -51,7 +51,6 @@ async function main() {
         },
     });
 
-    console.log('ダミーデータの挿入が完了しました。');
 
     const createdUsersCount = await prisma.user.count();
     const createdPostsCount = await prisma.post.count();
