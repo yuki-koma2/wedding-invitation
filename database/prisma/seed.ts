@@ -52,13 +52,24 @@ async function main() {
     });
 
     console.log('ダミーデータの挿入が完了しました。');
+
+    const createdUsersCount = await prisma.user.count();
+    const createdPostsCount = await prisma.post.count();
+    console.log(`🎉 おめでとうございます！${createdUsersCount}人のユーザーと${createdPostsCount}件の投稿が無事にデータベースに引っ越しました。データベースパーティーの始まりです！🎊`);
 }
 
 main()
     .catch((e) => {
+        console.error('おっと！データの種まきに失敗しました。エラー詳細:', e.message);
         console.error(e);
         process.exit(1);
     })
     .finally(async () => {
         await prisma.$disconnect();
     });
+
+process.on('SIGTERM', async () => {
+    console.log('優雅に終了します...');
+    await prisma.$disconnect();
+    process.exit(0);
+});

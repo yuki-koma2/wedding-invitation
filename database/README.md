@@ -68,14 +68,13 @@ schema.prismaを変更したらmigrationを実行する。
 devは開発環境でのmigrationを実行する。DDLを生成してくれる。
 
 ```bash
-# 1回目のmigration
+# 初回のマイグレーション（データベースの基礎を築きます）
 npx prisma migrate dev --name init
-# 2回目以降のmigration
+
+# 2回目以降のマイグレーション（データベースの進化を続けます）
 npx prisma migrate dev
-```
 
-## Status
-
-```bash
+# マイグレーションの状態確認（私たちの旅の記録をチェック）
 npx prisma migrate status
+
 ```
