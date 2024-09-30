@@ -12,6 +12,7 @@ const UserSchema = z.object({
 
 type UserFormInputs = z.infer<typeof UserSchema>;
 
+
 export default function UserFormWithReactHookForm() {
     const {
         register,

@@ -1,6 +1,7 @@
 import React from 'react';
 import {Image, Spacer} from "@nextui-org/react";
 import UserFormWithReactHookForm from "@/components/sampleUserFormWithReactHookForm";
+import GuestForm from "@/components/GuestForm";
 
 
 const HogePage = () => {
@@ -174,6 +175,7 @@ const HogePage = () => {
                 className="bg-white p-4 font-klee font-bold text-gray-500 text-center border-2 border-gray-200 rounded-lg shadow-sm">
                 <p>お手数ではございますがご都合のほどを11月2日までご一報賜りますようお願い申し上げます。</p>
                 <UserFormWithReactHookForm/>
+                <GuestForm />
 
             </section>
 
