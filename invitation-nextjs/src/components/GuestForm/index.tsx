@@ -1,16 +1,30 @@
 'use client';
 
 import React from 'react';
-import { useForm } from 'react-hook-form';
+import { Controller, useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { prefectures } from "@/models/prefectureCode";
 import { Guest, GuestSchema } from "@/components/GuestForm/guest.schema";
+import { Input } from "@nextui-org/input";
+import { Radio, RadioGroup } from "@nextui-org/radio";
+import {
+    Button,
+    cn,
+    Dropdown,
+    DropdownItem,
+    DropdownMenu,
+    DropdownTrigger,
+    Listbox,
+    ListboxItem
+} from "@nextui-org/react";
 
 function GuestForm() {
     const {
+        control,
         register,
         handleSubmit,
-        formState: { errors },
+        setValue,
+        formState: {errors},
     } = useForm<Guest>({
         resolver: zodResolver(GuestSchema),
         defaultValues: {
@@ -19,7 +33,7 @@ function GuestForm() {
     });
 
     const onSubmit = async (data: Guest) => {
-        console.log('guest',data);
+        console.log('guest', data);
         // フォームデータの処理（例：サーバーに送信）
         // try {
         //     const response = await fetch('/api/guest', {
@@ -45,105 +59,303 @@ function GuestForm() {
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
             <div>
-                <label>姓:</label>
-                <input type="text" {...register('lastName')} />
-                {errors.lastName && <p style={{color: 'red'}}>{errors.lastName.message}</p>}
+                {/*<label>姓:</label>*/}
+                <Input
+                    label={"姓"}
+                    type="text"
+                    isInvalid={!!errors.lastName}
+                    color={errors.lastName ? "danger" : "success"}
+                    errorMessage={errors.lastName?.message ?? ""}
+                    {...register('lastName')}
+
+                />
+                {/*{errors.lastName && <p style={{color: 'red'}}>{errors.lastName.message}</p>}*/}
             </div>
 
             <div>
-                <label>名:</label>
-                <input type="text" {...register('firstName')} />
-                {errors.firstName && <p style={{color: 'red'}}>{errors.firstName.message}</p>}
+                {/*<label>名:</label>*/}
+                {/* <Input*/}
+                {/*     type="text" {...register('firstName')}*/}
+                {/* />*/}
+                {/*{errors.firstName && <p style={{color: 'red'}}>{errors.firstName.message}</p>}*/}
+                <Input
+                    label={"名"}
+                    type="text"
+                    isInvalid={!!errors.firstName}
+                    color={errors.firstName ? "danger" : "success"}
+                    errorMessage={errors.firstName?.message ?? ""}
+                    {...register('firstName')}
+                />
             </div>
 
             <div>
-                <label>姓（ふりがな）:</label>
-                <input type="text" {...register('lastNameKana')} />
-                {errors.lastNameKana && (
-                    <p style={{color: 'red'}}>{errors.lastNameKana.message}</p>
-                )}
+                {/*<label>姓（ふりがな）:</label>*/}
+                {/* <Input type="text" {...register('lastNameKana')} />*/}
+                {/*{errors.lastNameKana && (*/}
+                {/*    <p style={{color: 'red'}}>{errors.lastNameKana.message}</p>*/}
+                {/*)}*/}
+
+                <Input
+                    label={"姓（ふりがな）"}
+                    type="text"
+                    isInvalid={!!errors.lastNameKana}
+                    color={errors.lastNameKana ? "danger" : "success"}
+                    errorMessage={errors.lastNameKana?.message ?? ""}
+                    {...register('lastNameKana')}
+                />
             </div>
 
             <div>
-                <label>名（ふりがな）:</label>
-                <input type="text" {...register('firstNameKana')} />
-                {errors.firstNameKana && (
-                    <p style={{color: 'red'}}>{errors.firstNameKana.message}</p>
-                )}
+                {/*<label>名（ふりがな）:</label>*/}
+                {/* <Input type="text" {...register('firstNameKana')} />*/}
+                {/*{errors.firstNameKana && (*/}
+                {/*    <p style={{color: 'red'}}>{errors.firstNameKana.message}</p>*/}
+                {/*)}*/}
+                <Input
+                    label={"名（ふりがな）"}
+                    type="text"
+                    isInvalid={!!errors.firstNameKana}
+                    color={errors.firstNameKana ? "danger" : "success"}
+                    errorMessage={errors.firstNameKana?.message ?? ""}
+                    {...register('firstNameKana')}
+                />
             </div>
 
             <div>
-                <label>新郎・新婦側:</label>
-                <select {...register('side')}>
-                    <option value="GROOM">新郎側</option>
-                    <option value="BRIDE">新婦側</option>
-                </select>
+                {/*<label>新郎・新婦側:</label>*/}
+                {/*<select {...register('side')}>*/}
+                {/*    <option value="GROOM">新郎側</option>*/}
+                {/*    <option value="BRIDE">新婦側</option>*/}
+                {/*</select>*/}
+
+
+                <RadioGroup
+                    label="新郎・新婦側"
+                    color="warning"
+                    onValueChange={(value: string) => {
+                        console.log('value', value);
+                        setValue('side', value as "GROOM" | "BRIDE");
+                    }}
+                >
+                    <div className="flex flex-row gap-4 justify-center">
+                        <Radio value="GROOM" classNames={{
+                            base: cn(
+                                "inline-flex m-0 bg-content1 hover:bg-content2 items-center justify-between",
+                                "flex-row-reverse max-w-[300px] cursor-pointer rounded-lg gap-4 p-4 border-2 border-transparent",
+                                "data-[selected=true]:border-primary"
+                            ),
+                        }}>
+                            新郎側
+                        </Radio>
+                        <Radio value="BRIDE" classNames={{
+                            base: cn(
+                                "inline-flex m-0 bg-content1 hover:bg-content2 items-center justify-between",
+                                "flex-row-reverse max-w-[300px] cursor-pointer rounded-lg gap-4 p-4 border-2 border-transparent",
+                                "data-[selected=true]:border-primary"
+                            ),
+                        }}>
+                            新婦側
+                        </Radio>
+
+                    </div>
+                </RadioGroup>
                 {errors.side && <p style={{color: 'red'}}>{errors.side.message}</p>}
+
             </div>
 
             <div>
-                <label>郵便番号:</label>
-                <input type="text" {...register('postalCode')} />
-                {errors.postalCode && (
-                    <p style={{color: 'red'}}>{errors.postalCode.message}</p>
-                )}
+                <Input
+                    label={"郵便番号"}
+                    type="text"
+                    isInvalid={!!errors.postalCode}
+                    color={errors.postalCode ? "danger" : "success"}
+                    errorMessage={errors.postalCode?.message ?? ""}
+                    {...register('postalCode')}
+                />
             </div>
-
-            {/*<div>*/}
-            {/*    <label>都道府県:</label>*/}
-            {/*    <select {...register('prefectureCode')}>*/}
-            {/*        <option value="">選択してください</option>*/}
-            {/*        {Array.from({ length: 47 }, (_, i) => i + 1).map((code) => (*/}
-            {/*            <option key={code} value={code}>*/}
-            {/*                /!* 都道府県名を表示する *!/*/}
-            {/*                {getPrefectureName(code)}*/}
-            {/*            </option>*/}
-            {/*        ))}*/}
-            {/*    </select>*/}
-            {/*    {errors.prefectureCode && (*/}
-            {/*        <p style={{ color: 'red' }}>{errors.prefectureCode.message}</p>*/}
-            {/*    )}*/}
-            {/*</div>*/}
-
             <div>
+                {/*<label>都道府県:</label>*/}
+                {/*<select {...register('prefectureCode', {valueAsNumber: true})}>*/}
+                {/*    <option value="">選択してください</option>*/}
+                {/*    {prefectures.map((pref) => (*/}
+                {/*        <option key={pref.code} value={pref.code}>*/}
+                {/*            {pref.name}*/}
+                {/*        </option>*/}
+                {/*    ))}*/}
+                {/*</select>*/}
+                {/*{errors.prefectureCode && (*/}
+                {/*    <p style={{color: 'red'}}>{errors.prefectureCode.message}</p>*/}
+                {/*)}*/}
+
+                {/*<Listbox*/}
+                {/*    aria-label="Single selection example"*/}
+                {/*    variant="flat"*/}
+                {/*    disallowEmptySelection*/}
+                {/*    selectionMode="single"*/}
+                {/*    selectedKeys={selectedKeys}*/}
+                {/*    onSelectionChange={setSelectedKeys}*/}
+                {/*>*/}
+                {/*    <ListboxItem key="text">Text</ListboxItem>*/}
+                {/*    <ListboxItem key="number">Number</ListboxItem>*/}
+                {/*    <ListboxItem key="date">Date</ListboxItem>*/}
+                {/*    <ListboxItem key="single_date">Single Date</ListboxItem>*/}
+                {/*    <ListboxItem key="iteration">Iteration</ListboxItem>*/}
+                {/*</Listbox>*/}
+                {/*<p className="text-small text-default-500">Selected value: {selectedValue}</p>*/}
+                {/*<label>都道府県:</label>*/}
+                {/*<Controller*/}
+                {/*    control={control}*/}
+                {/*    name="prefectureCode"*/}
+                {/*    render={({ field }) => (*/}
+                {/*        <Listbox*/}
+                {/*            aria-label="都道府県選択"*/}
+                {/*            variant="flat"*/}
+                {/*            disallowEmptySelection*/}
+                {/*            selectionMode="single"*/}
+                {/*            selectedKeys={field.value ? [field.value.toString()] : []}*/}
+                {/*            onSelectionChange={(keys) => {*/}
+                {/*                const value = Array.from(keys)[0];*/}
+                {/*                field.onChange(Number(value));*/}
+                {/*            }}*/}
+                {/*        >*/}
+                {/*            {prefectures.map((pref) => (*/}
+                {/*                <ListboxItem key={pref.code.toString()} value={pref.code.toString()}>*/}
+                {/*                    {pref.name}*/}
+                {/*                </ListboxItem>*/}
+                {/*            ))}*/}
+                {/*        </Listbox>*/}
+                {/*    )}*/}
+                {/*/>*/}
+                {/*{errors.prefectureCode && (*/}
+                {/*    <p style={{ color: 'red' }}>{errors.prefectureCode.message}</p>*/}
+                {/*)}*/}
                 <label>都道府県:</label>
-                <select {...register('prefectureCode', {valueAsNumber: true})}>
-                    <option value="">選択してください</option>
-                    {prefectures.map((pref) => (
-                        <option key={pref.code} value={pref.code}>
-                            {pref.name}
-                        </option>
-                    ))}
-                </select>
+                <Controller
+                    control={control}
+                    name="prefectureCode"
+                    render={({ field }) => {
+                        const selectedPrefecture = prefectures.find((pref) => pref.code === field.value);
+                        return (
+                            <Dropdown>
+                                <DropdownTrigger>
+                                    <Button variant="bordered" className="text-amber-500">
+                                        {selectedPrefecture ? selectedPrefecture.name : '都道府県を選択'}
+                                    </Button>
+                                </DropdownTrigger>
+                                <DropdownMenu
+                                    aria-label="都道府県選択"
+                                    disallowEmptySelection
+                                    selectionMode="single"
+                                    selectedKeys={field.value ? [field.value.toString()] : []}
+                                    onSelectionChange={(keys) => {
+                                        const value = Array.from(keys)[0];
+                                        field.onChange(Number(value));
+                                    }}
+                                >
+                                    {prefectures.map((pref) => (
+                                        <DropdownItem key={pref.code.toString()}>{pref.name}</DropdownItem>
+                                    ))}
+                                </DropdownMenu>
+                            </Dropdown>
+                        );
+                    }}
+                />
                 {errors.prefectureCode && (
-                    <p style={{color: 'red'}}>{errors.prefectureCode.message}</p>
+                    <p style={{ color: 'red' }}>{errors.prefectureCode.message}</p>
                 )}
             </div>
 
 
             <div>
-                <label>市区町村:</label>
-                <input type="text" {...register('city')} />
-                {errors.city && <p style={{color: 'red'}}>{errors.city.message}</p>}
+                {/*<label>市区町村:</label>*/}
+                {/* <Input type="text" {...register('city')} />*/}
+                {/*{errors.city && <p style={{color: 'red'}}>{errors.city.message}</p>}*/}
+
+                <Input
+                    label={"市区町村"}
+                    type="text"
+                    isInvalid={!!errors.city}
+                    color={errors.city ? "danger" : "success"}
+                    errorMessage={errors.city?.message ?? ""}
+                    {...register('city')}
+                />
             </div>
 
             <div>
-                <label>住所詳細:</label>
-                <input type="text" {...register('addressLine')} />
-                {errors.addressLine && (
-                    <p style={{color: 'red'}}>{errors.addressLine.message}</p>
-                )}
+                {/*<label>住所詳細:</label>*/}
+                {/* <Input type="text" {...register('addressLine')} />*/}
+                {/*{errors.addressLine && (*/}
+                {/*    <p style={{color: 'red'}}>{errors.addressLine.message}</p>*/}
+                {/*)}*/}
+                <Input
+                    label={"住所詳細"}
+                    type="text"
+                    isInvalid={!!errors.addressLine}
+                    color={errors.addressLine ? "danger" : "success"}
+                    errorMessage={errors.addressLine?.message ?? ""}
+                    {...register('addressLine')}
+                />
             </div>
 
             <div>
-                <label>出欠確認:</label>
-                <select {...register('attendanceStatus')}>
-                    <option value="ATTENDING">出席</option>
-                    <option value="NOT_ATTENDING">欠席</option>
-                    <option value="PENDING">未定</option>
-                </select>
+                {/*<label>出欠確認:</label>*/}
+                {/*<select {...register('attendanceStatus')}>*/}
+                {/*    <option value="ATTENDING">出席</option>*/}
+                {/*    <option value="NOT_ATTENDING">欠席</option>*/}
+                {/*    <option value="PENDING">未定</option>*/}
+                {/*</select>*/}
+                {/*{errors.attendanceStatus && (*/}
+                {/*    <p style={{color: 'red'}}>{errors.attendanceStatus.message}</p>*/}
+                {/*)}*/}
+                <RadioGroup
+                    label="出欠確認"
+                    color="warning"
+                    onValueChange={(value: string) => {
+                        console.log('value', value);
+                        setValue('attendanceStatus', value as 'ATTENDING' | 'NOT_ATTENDING' | 'PENDING');
+                    }}
+                >
+                    <div className="flex flex-row gap-4 justify-center">
+                        <Radio
+                            value="ATTENDING"
+                            classNames={{
+                                base: cn(
+                                    'inline-flex m-0 bg-content1 hover:bg-content2 items-center justify-between',
+                                    'flex-row-reverse max-w-[300px] cursor-pointer rounded-lg gap-4 p-4 border-2 border-transparent',
+                                    'data-[selected=true]:border-primary'
+                                ),
+                            }}
+                        >
+                            出席
+                        </Radio>
+                        <Radio
+                            value="NOT_ATTENDING"
+                            classNames={{
+                                base: cn(
+                                    'inline-flex m-0 bg-content1 hover:bg-content2 items-center justify-between',
+                                    'flex-row-reverse max-w-[300px] cursor-pointer rounded-lg gap-4 p-4 border-2 border-transparent',
+                                    'data-[selected=true]:border-primary'
+                                ),
+                            }}
+                        >
+                            欠席
+                        </Radio>
+                        <Radio
+                            value="PENDING"
+                            classNames={{
+                                base: cn(
+                                    'inline-flex m-0 bg-content1 hover:bg-content2 items-center justify-between',
+                                    'flex-row-reverse max-w-[300px] cursor-pointer rounded-lg gap-4 p-4 border-2 border-transparent',
+                                    'data-[selected=true]:border-primary'
+                                ),
+                            }}
+                        >
+                            未定
+                        </Radio>
+                    </div>
+                </RadioGroup>
                 {errors.attendanceStatus && (
-                    <p style={{color: 'red'}}>{errors.attendanceStatus.message}</p>
+                    <p style={{ color: 'red' }}>{errors.attendanceStatus.message}</p>
                 )}
             </div>
 
