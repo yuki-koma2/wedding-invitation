@@ -18,9 +18,6 @@ function GuestForm() {
         formState: {errors},
     } = useForm<Guest>({
         resolver: zodResolver(GuestSchema),
-        defaultValues: {
-            attendanceStatus: 'PENDING',
-        },
     });
 
     const onSubmit = async (data: Guest) => {
