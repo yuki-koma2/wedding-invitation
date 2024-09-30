@@ -1,5 +1,9 @@
 import { z } from 'zod';
 import { prefectureCodes } from "@/models/prefectureCode";
+import japaneseErrorMap from "@/locales/zodValidationErrorMap.jp";
+
+// custom error message
+z.setErrorMap(japaneseErrorMap)
 
 // サイド（新郎側・新婦側）のEnum
 export const SideEnum = z.enum(['GROOM', 'BRIDE']);
