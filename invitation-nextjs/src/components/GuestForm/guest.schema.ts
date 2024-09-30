@@ -20,7 +20,7 @@ export const GuestSchema = z.object({
     side: SideEnum,
     postalCode: z
         .string()
-        .regex(/^\d{7}$/, '郵便番号は7桁の数字で入力してください')
+        .regex(/^(\d{3}-?\d{4})$/, '郵便番号は123-4567か1234567の形式で入力してください')
         .optional()
         .or(z.literal('')),
     prefectureCode: z
