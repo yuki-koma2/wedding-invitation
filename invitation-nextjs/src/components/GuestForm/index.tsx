@@ -130,6 +130,9 @@ function GuestForm() {
                                         const value = Array.from(keys)[0];
                                         field.onChange(Number(value));
                                     }}
+                                    classNames={{
+                                        list: 'max-h-60 overflow-y-auto', // ここで最大高さとスクロールを設定
+                                    }}
                                 >
                                     {prefectures.map((pref) => (
                                         <DropdownItem key={pref.code.toString()}>{pref.name}</DropdownItem>
