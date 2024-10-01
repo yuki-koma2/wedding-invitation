@@ -38,6 +38,9 @@ const InvitationPage = () => {
                     <h1 className="font-petit text-6xl text-white">
                         Wedding<br/> Invitation
                     </h1>
+                    <p className="font-shadows text-3xl text-white text-center pt-3">
+                        - for family -
+                    </p>
                     <br/>
 
                     <p className="font-shadows text-3xl text-white text-center pt-3">
@@ -45,9 +48,6 @@ const InvitationPage = () => {
                         yuki & natsumi
                     </p>
 
-                    <p className="font-shadows text-3xl text-white text-center pt-3">
-                        親族向けページ
-                    </p>
 
                 </div>
             </section>
@@ -70,17 +70,6 @@ const InvitationPage = () => {
             <section className="
             flex justify-center flex-col items-center font-klee font-bold text-gray-500 text-center p-4
            ">
-                {/*<h1 className="font-petit text-3xl text-gray-500 py-4">Information</h1>*/}
-                {/*<p>日時： 令和６年12月1日(日)</p>*/}
-                {/*<p>受付： 13時00分</p>*/}
-                {/*<p className="text-red-700">受付後親族顔合わせを行いますので<br/><span*/}
-                {/*    className="font-bold">13時20分</span>までにはお越しください</p>*/}
-                {/*<p>挙式： 14時00分</p>*/}
-                {/*<p>披露宴: 15時00分</p>*/}
-                {/*<p>場所: 東京大神宮</p>*/}
-                {/*<p>住所： 東京都千代田区富士見２丁目４の１</p>*/}
-                {/*<p>電話番号： 03-3234-6611</p>*/}
-
                 <h1 className="font-petit text-3xl text-gray-500 py-4">💐Information💐</h1>
                 <div className="space-y-2">
                     <p className="flex">
