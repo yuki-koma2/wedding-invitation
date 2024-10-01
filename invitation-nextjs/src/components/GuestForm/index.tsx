@@ -178,7 +178,7 @@ function GuestForm() {
                             return (
                                 <Dropdown>
                                     <DropdownTrigger>
-                                        <Button variant="bordered" className="text-amber-500">
+                                        <Button variant="bordered" className="text-gray-600">
                                             {selectedPrefecture ? selectedPrefecture.name : '都道府県を選択'}
                                         </Button>
                                     </DropdownTrigger>
@@ -192,7 +192,7 @@ function GuestForm() {
                                             field.onChange(Number(value));
                                         }}
                                         classNames={{
-                                            list: 'max-h-60 overflow-y-auto', // ここで最大高さとスクロールを設定
+                                            list: 'max-h-60 overflow-y-auto text-gray-600',
                                         }}
                                     >
                                         {prefectures.map((pref) => (
