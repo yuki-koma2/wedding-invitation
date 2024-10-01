@@ -73,8 +73,8 @@ const InvitationPage = () => {
            ">
                 <h1 className="font-petit text-3xl text-gray-500">Information</h1>
                 <p>日時： 令和６年12月1日(日)</p>
-                <p>親族顔合わせ: 13時20分</p>
-                <p>受付： 13時30分</p>
+                <p>受付： 13時00分</p>
+                <p className="text-amber-500">受付後親族顔合わせを行いますので<br/><span className="font-bold">13時20分</span>までにはお越しください</p>
                 <p>挙式： 14時00分</p>
                 <p>披露宴: 15時00分</p>
                 <p>場所: 東京大神宮</p>
@@ -97,7 +97,7 @@ const InvitationPage = () => {
 
             <section
                 className="bg-white p-4 font-klee font-bold text-gray-500 text-center border-2 border-gray-200 rounded-lg shadow-sm">
-                <p>お手数ではございますがご都合のほどを11月2日までご一報賜りますようお願い申し上げます。</p>
+                <p>お手数ではございますがご都合のほどを<span className="font-bold">11月2日</span>までにご一報賜りますようお願い申し上げます</p>
                 <GuestForm/>
             </section>
         </main>

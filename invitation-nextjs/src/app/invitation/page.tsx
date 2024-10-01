@@ -70,7 +70,7 @@ const InvitationPage = () => {
            ">
                 <h1 className="font-petit text-3xl text-gray-500">Information</h1>
                 <p>日時： 令和６年12月1日(日)</p>
-                <p>受付： 13時30分</p>
+                <p>受付： 13時00分</p>
                 <p>挙式： 14時00分</p>
                 <p>披露宴: 15時00分</p>
                 <p>場所: 東京大神宮</p>
