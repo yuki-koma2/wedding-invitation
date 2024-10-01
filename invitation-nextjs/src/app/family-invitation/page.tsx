@@ -81,7 +81,7 @@ const InvitationPage = () => {
                         <span>13時00分</span>
                     </p>
                     <p className="text-red-700">
-                        受付後親族顔合わせを行いますので<br/>
+                        受付後 親族顔合わせを行いますので<br/>
                         <span className="font-bold">13時20分</span>までにはお越しください
                     </p>
                     <p className="flex">
