@@ -34,24 +34,35 @@ export default function Home() {
                     invitation
                 </Link>
                 <Link
-                    isExternal
                     className={buttonStyles({
                         color: "primary",
                         radius: "full",
                         variant: "shadow",
-                    })}
-                    href={siteConfig.links.docs}
+                    }) + "bg-gradient-to-tr from-pink-500 to-yellow-500 text-white shadow-lg"}
+                    href={siteConfig.navigation.familyInvitation.path}
                 >
-                    Documentation
+                    親族向けページ
                 </Link>
-                <Link
-                    isExternal
-                    className={buttonStyles({variant: "bordered", radius: "full"})}
-                    href={siteConfig.links.github}
-                >
-                    <GithubIcon size={20}/>
-                    GitHub
-                </Link>
+
+                {/*<Link*/}
+                {/*    isExternal*/}
+                {/*    className={buttonStyles({*/}
+                {/*        color: "primary",*/}
+                {/*        radius: "full",*/}
+                {/*        variant: "shadow",*/}
+                {/*    })}*/}
+                {/*    href={siteConfig.links.docs}*/}
+                {/*>*/}
+                {/*    Documentation*/}
+                {/*</Link>*/}
+                {/*<Link*/}
+                {/*    isExternal*/}
+                {/*    className={buttonStyles({variant: "bordered", radius: "full"})}*/}
+                {/*    href={siteConfig.links.github}*/}
+                {/*>*/}
+                {/*    <GithubIcon size={20}/>*/}
+                {/*    GitHub*/}
+                {/*</Link>*/}
             </div>
 
             <div className="mt-8">
