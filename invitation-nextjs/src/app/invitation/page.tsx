@@ -3,7 +3,7 @@ import { Spacer } from "@nextui-org/react";
 import GuestForm from "@/components/GuestForm";
 
 
-const HogePage = () => {
+const InvitationPage = () => {
     return (
         <main
             className={`bg-white bg-center bg-cover bg-fixed
@@ -77,13 +77,14 @@ const HogePage = () => {
                 <p>住所： 東京都千代田区富士見２丁目４の１</p>
                 <p>電話番号： 03-3234-6611</p>
                 <div className="flex justify-center">
-                    <div className="w-full max-w-xl aspect-square">
+                    <div className="max-w-xl aspect-square">
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.651404047731!2d139.7498723152586!3d35.67954838019352!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188b5a3c2f8d4f%3A0x2f6b8b4e3f5d1b6e!2z5p2x5Lqs44Kk44Oq44K_44Oz44K_44O8!5e0!3m2!1sja!2sjp!4v1635736820004!5m2!1sja!2sjp"
-                            className="w-full h-full"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d473.41026327893337!2d139.74629157674818!3d35.69991383101956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c43dd962eaf%3A0x1ae70a1958f36ceb!2z5p2x5Lqs5aSn56We5a6u44Oe44OE44Ok44K144Ot44Oz!5e0!3m2!1sja!2sjp!4v1727743923642!5m2!1sja!2sjp"
+                            className="min-w-full h-96"
                             style={{border: 0}}
                             allowFullScreen
                             loading="lazy"
+                            referrerPolicy="no-referrer-when-downgrade"
                             title="東京大神宮の地図"
                         />
                     </div>
@@ -99,4 +100,4 @@ const HogePage = () => {
     );
 };
 
-export default HogePage;
+export default InvitationPage;
