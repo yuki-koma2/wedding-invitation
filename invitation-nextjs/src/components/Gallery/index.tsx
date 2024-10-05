@@ -1,6 +1,8 @@
 'use client';
 import React, { useState, useEffect } from "react";
 import Icon from "@/components/icon";
+import { Button } from "@nextui-org/react";
+
 
 const GallerySection = () => {
     const [selectedImage, setSelectedImage] = useState<string|null>(null);
@@ -8,13 +10,13 @@ const GallerySection = () => {
 
     useEffect(() => {
         if (selectedImage) {
-            setIsModalVisible(true); // モーダルが選択された時に表示
+            setIsModalVisible(true);
         }
     }, [selectedImage]);
 
     const closeModal = () => {
-        setIsModalVisible(false); // モーダルを非表示にする
-        setTimeout(() => setSelectedImage(null), 300); // アニメーション終了後に画像を消す
+        setIsModalVisible(false);
+        setTimeout(() => setSelectedImage(null), 300);
     };
 
     const images = [
@@ -30,8 +32,12 @@ const GallerySection = () => {
     ];
 
     return (
-        <section className="flex justify-center flex-col items-center font-klee font-bold text-gray-500 text-center p-4">
-            <h1 className="font-petit text-3xl text-gray-500 py-4"><Icon color={"red"}/>Photo Gallery<Icon color={"red"}/></h1>
+        <section
+            className="flex justify-center flex-col items-center font-klee font-bold text-gray-500 text-center p-4">
+            <h1 className="font-petit text-3xl text-gray-500 py-4"><Icon color={"red"}/>Photo Gallery<Icon
+                color={"red"}/></h1>
+            <p className="text-center">kodawari</p>
+            <br/>
             <div className="grid grid-cols-3 gap-2">
                 {images.map((src, index) => (
                     <div
@@ -47,19 +53,26 @@ const GallerySection = () => {
                     </div>
                 ))}
             </div>
+            <br/>
+            <p className="text-center">クリックすると拡大します</p>
 
             {selectedImage && (
                 <div
-                    className={`fixed inset-0 flex items-center justify-center bg-black bg-opacity-75 z-50 transition-opacity duration-300 ${
+                    className={`fixed inset-0 flex items-center justify-center bg-black bg-opacity-75 z-50 transition-opacity duration-300 animate-blurFadeOut ${
                         isModalVisible ? "opacity-100" : "opacity-0"
                     }`}
-                    onClick={closeModal}
                 >
                     <img
                         src={selectedImage}
                         alt="Selected"
                         className="max-w-3xl max-h-screen"
                     />
+                    <Button
+                        onClick={closeModal}
+                        className="absolute top-4 right-4 text-white bg-black bg-opacity-50 p-2 rounded-full hover:bg-opacity-75 transition-colors"
+                    >
+                        閉じる
+                    </Button>
                 </div>
             )}
         </section>
