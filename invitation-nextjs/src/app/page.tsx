@@ -43,7 +43,16 @@ export default function Home() {
                 >
                     親族向けページ
                 </Link>
-
+                <Link
+                    className={buttonStyles({
+                        color: "primary",
+                        radius: "full",
+                        variant: "shadow",
+                    }) + "bg-gradient-to-tr from-pink-500 to-yellow-500 text-white shadow-lg"}
+                    href={siteConfig.navigation.thanks.path}
+                >
+                    tanksページ
+                </Link>
                 {/*<Link*/}
                 {/*    isExternal*/}
                 {/*    className={buttonStyles({*/}
