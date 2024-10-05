@@ -1,9 +1,11 @@
 import React from 'react';
 import { Spacer } from "@nextui-org/react";
 import GuestForm from "@/components/GuestForm";
+import GallerySection from "@/components/Gallery";
 
 
 const InvitationPage = () => {
+
     return (
         <main
             className={`bg-white bg-center bg-cover bg-fixed
@@ -20,6 +22,7 @@ const InvitationPage = () => {
                      loading="lazy"
                      alt="結婚指輪と花束"
                      className="absolute inset-0 h-full w-full object-cover object-center"/>
+
                 {/*<Image*/}
                 {/*    src={`/img/header.jpeg`}*/}
                 {/*    // loading="lazy"*/}
@@ -124,13 +127,15 @@ const InvitationPage = () => {
                     また お酒の入るご祝宴でございますので <br/>
                     ご来館には公共交通機関をご利用ください</p>
             </section>
-
+            <GallerySection/>
             <section
                 className="p-4 font-klee font-bold text-gray-500 text-center rounded-lg ">
                 <p className="my-10">お手数ではございますがご都合のほどを<br/><span
                     className="font-bold">11月2日(土)</span>までにご一報賜りますようお願い申し上げます</p>
                 <GuestForm/>
             </section>
+
+
         </main>
     );
 };
