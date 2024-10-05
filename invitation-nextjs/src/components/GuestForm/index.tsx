@@ -25,7 +25,28 @@ function GuestForm() {
 
     const onSubmit = async (data: Guest) => {
         console.log('guest', data);
-        // TODO フォームデータの処理
+        try {
+            const response = await fetch('/api/guest', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            });
+
+            if (response.ok) {
+                const result = await response.json();
+                console.log('成功:', result);
+                // 必要に応じてフォームのリセットや通知を行う
+            } else {
+                const errorData = await response.json();
+                console.error('エラー:', errorData);
+                // エラー表示などの処理を行う
+            }
+        } catch (error) {
+            console.error('通信エラー:', error);
+            // 通信エラーの表示などの処理を行う
+        }
     };
 
     return (

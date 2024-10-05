@@ -4,13 +4,16 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "bun run generate && next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "check": "sh ./../tools/check-error-handling.sh",
+    "generate": "prisma generate --schema=./../database/prisma/schema.prisma"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
     "@nextui-org/react": "^2.4.6",
+    "@prisma/client": "^5.20.0",
     "framer-motion": "^11.5.4",
     "next": "^14.2.7",
     "next-themes": "^0.3.0",
@@ -20,13 +23,14 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "typescript": "^5",
     "@types/node": "^22.0.0",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.10",
     "eslint": "^8",
-    "eslint-config-next": "14.2.14"
+    "eslint-config-next": "14.2.14",
+    "postcss": "^8",
+    "prisma": "^5.20.0",
+    "tailwindcss": "^3.4.10",
+    "typescript": "^5"
   }
 }
