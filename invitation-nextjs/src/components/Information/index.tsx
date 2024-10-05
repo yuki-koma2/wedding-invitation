@@ -11,7 +11,7 @@ const InformationSection: React.FC<InformationSectionProps> = ({isFamily}) => {
         <section className="
             flex justify-center flex-col items-center font-klee font-bold text-gray-500 text-center p-4
            ">
-            <h1 className="font-petit text-3xl text-gray-500 py-4"><Icon/>Information<Icon/></h1>
+            <h1 className="font-petit text-3xl text-gray-500 py-4"><Icon color={"green"}/>Information<Icon color={"green"}/></h1>
             <div className="space-y-2">
                 <p className="flex">
                     <span className="w-24 text-right pr-4">日時：</span>
