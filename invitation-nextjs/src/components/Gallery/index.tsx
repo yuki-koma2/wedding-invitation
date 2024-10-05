@@ -36,7 +36,9 @@ const GallerySection = () => {
             className="flex justify-center flex-col items-center font-klee font-bold text-gray-500 text-center p-4">
             <h1 className="font-petit text-3xl text-gray-500 py-4"><Icon color={"red"}/>Photo Gallery<Icon
                 color={"red"}/></h1>
-            <p className="text-center">kodawari</p>
+            <p className="text-center">二人の出会いの場である<br/>青山学院大学で撮影しました</p>
+
+
             <br/>
             <div className="grid grid-cols-3 gap-2">
                 {images.map((src, index) => (
@@ -53,8 +55,6 @@ const GallerySection = () => {
                     </div>
                 ))}
             </div>
-            <br/>
-            <p className="text-center">クリックすると拡大します</p>
 
             {selectedImage && (
                 <div

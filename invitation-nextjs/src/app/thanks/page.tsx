@@ -22,7 +22,7 @@ const ThanksPage = () => {
                     </h1>
 
                     <p className="font-klee text-xl text-white text-center pt-3">
-                        当日は皆様にお会いできることを<br/>楽しみにしています
+                        当日は皆様にお会いできることを<br/>楽しみにしております
                     </p>
                 </div>
                 <div className="flex justify-center">
@@ -36,7 +36,7 @@ const ThanksPage = () => {
                         })}
                         href={siteConfig.links.survey}
                     >
-                        アレルギー未回答の場合の方はこちら
+                        アレルギー確認未回答の方はこちら
                     </Link>
                 </div>
             </section>
