@@ -7,6 +7,7 @@
     "build": "bun run generate && next build",
     "start": "next start",
     "lint": "next lint",
+    "check": "sh ./../tools/check-error-handling.sh",
     "generate": "prisma generate --schema=./../database/prisma/schema.prisma"
   },
   "dependencies": {

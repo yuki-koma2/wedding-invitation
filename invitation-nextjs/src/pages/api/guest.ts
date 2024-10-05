@@ -47,6 +47,5 @@ export default async function handle(
         // TODO error handling
         console.error('サーバーエラー:', error);
         return res.status(500).json({message: 'サーバーエラーが発生しました'});
-        // return res.status(201).json(result);
     }
 }
