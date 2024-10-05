@@ -58,7 +58,6 @@ const GuestForm: React.FC = () => {
             <div className="my-1.5">
                 <RadioGroup
                     label="ご出席"
-                    color="warning"
                     onValueChange={(value: string) => {
                         console.log('value', value);
                         setValue('attendanceStatus', value as 'ATTENDING' | 'NOT_ATTENDING');
@@ -71,7 +70,7 @@ const GuestForm: React.FC = () => {
                                 base: cn(
                                     'inline-flex m-0 bg-content1 hover:bg-content2 items-center justify-between',
                                     'flex-row-reverse max-w-[300px] cursor-pointer rounded-lg gap-4 p-4 border-2 border-transparent',
-                                    'data-[selected=true]:border-primary'
+                                    'data-[selected=true]:border-custom-gray'
                                 ),
                             }}
                         >
@@ -83,7 +82,7 @@ const GuestForm: React.FC = () => {
                                 base: cn(
                                     'inline-flex m-0 bg-content1 hover:bg-content2 items-center justify-between',
                                     'flex-row-reverse max-w-[300px] cursor-pointer rounded-lg gap-4 p-4 border-2 border-transparent',
-                                    'data-[selected=true]:border-primary'
+                                    'data-[selected=true]:border-custom-gray'
                                 ),
                             }}
                         >
@@ -140,7 +139,6 @@ const GuestForm: React.FC = () => {
             <div className="my-1.5 pt-">
                 <RadioGroup
                     label="いずれかをお選びください"
-                    color="warning"
                     onValueChange={(value: string) => {
                         console.log('value', value);
                         setValue('side', value as "GROOM" | "BRIDE");
@@ -151,7 +149,7 @@ const GuestForm: React.FC = () => {
                             base: cn(
                                 "inline-flex m-0 bg-content1 hover:bg-content2 items-center justify-between",
                                 "flex-row-reverse max-w-[300px] cursor-pointer rounded-lg gap-4 p-4 border-2 border-transparent",
-                                "data-[selected=true]:border-primary"
+                                "data-[selected=true]:border-custom-gray"
                             ),
                         }}>
                             新郎側
@@ -160,7 +158,7 @@ const GuestForm: React.FC = () => {
                             base: cn(
                                 "inline-flex m-0 bg-content1 hover:bg-content2 items-center justify-between",
                                 "flex-row-reverse max-w-[300px] cursor-pointer rounded-lg gap-4 p-4 border-2 border-transparent",
-                                "data-[selected=true]:border-primary"
+                                "data-[selected=true]:border-custom-gray"
                             ),
                         }}>
                             新婦側
