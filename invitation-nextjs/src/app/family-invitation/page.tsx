@@ -38,6 +38,9 @@ const InvitationPage = () => {
                     <h1 className="font-petit text-6xl text-white">
                         Wedding<br/> Invitation
                     </h1>
+                    <p className="font-shadows text-3xl text-white text-center pt-3">
+                        - for family -
+                    </p>
                     <br/>
 
                     <p className="font-shadows text-3xl text-white text-center pt-3">
@@ -64,7 +67,6 @@ const InvitationPage = () => {
                 </p>
             </section>
 
-
             <section className="
             flex justify-center flex-col items-center font-klee font-bold text-gray-500 text-center p-4
            ">
@@ -77,6 +79,10 @@ const InvitationPage = () => {
                     <p className="flex">
                         <span className="w-24 text-right pr-4">受付：</span>
                         <span>13時00分</span>
+                    </p>
+                    <p className="text-red-700">
+                        受付後 親族顔合わせを行いますので<br/>
+                        <span className="font-bold">13時20分</span>までにはお越しください
                     </p>
                     <p className="flex">
                         <span className="w-24 text-right pr-4">挙式：</span>
