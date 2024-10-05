@@ -11,8 +11,10 @@ import { Button, Checkbox, cn, Dropdown, DropdownItem, DropdownMenu, DropdownTri
 import { Link } from "@nextui-org/link";
 import { siteConfig } from "@/config/site";
 import { button as buttonStyles } from "@nextui-org/theme";
+import { useRouter } from "next/navigation";
 
-function GuestForm() {
+const GuestForm: React.FC = () => {
+    const router = useRouter();
     const {
         control,
         register,
@@ -25,6 +27,7 @@ function GuestForm() {
 
     const onSubmit = async (data: Guest) => {
         console.log('guest', data);
+
         try {
             const response = await fetch('/api/guest', {
                 method: 'POST',
@@ -37,7 +40,8 @@ function GuestForm() {
             if (response.ok) {
                 const result = await response.json();
                 console.log('成功:', result);
-                // 必要に応じてフォームのリセットや通知を行う
+                router.push(siteConfig.navigation.thanks.path);
+
             } else {
                 const errorData = await response.json();
                 console.error('エラー:', errorData);
@@ -57,7 +61,7 @@ function GuestForm() {
                     color="warning"
                     onValueChange={(value: string) => {
                         console.log('value', value);
-                        setValue('attendanceStatus', value as 'ATTENDING' | 'NOT_ATTENDING' | 'PENDING');
+                        setValue('attendanceStatus', value as 'ATTENDING' | 'NOT_ATTENDING');
                     }}
                 >
                     <div className="flex flex-row gap-4 justify-center">
@@ -84,18 +88,6 @@ function GuestForm() {
                             }}
                         >
                             欠席
-                        </Radio>
-                        <Radio
-                            value="PENDING"
-                            classNames={{
-                                base: cn(
-                                    'inline-flex m-0 bg-content1 hover:bg-content2 items-center justify-between',
-                                    'flex-row-reverse max-w-[300px] cursor-pointer rounded-lg gap-4 p-4 border-2 border-transparent',
-                                    'data-[selected=true]:border-primary'
-                                ),
-                            }}
-                        >
-                            未定
                         </Radio>
                     </div>
                 </RadioGroup>
@@ -259,7 +251,15 @@ function GuestForm() {
                 >
                     回答はこちらから
                 </Link>
-                <Checkbox className="text-amber-500">回答済みの場合はチェックしてください</Checkbox>
+                <Checkbox
+                    className="text-amber-500"
+                    isInvalid={!!errors.isCheck}
+                    color={errors.isCheck ? "danger" : "default"}
+                    onValueChange={(value: boolean) => {
+                        setValue('isCheck', value);
+                    }}
+                >回答済みの場合はチェックしてください</Checkbox>
+                {errors.isCheck && <p style={{color: 'red'}}>{errors.isCheck.message}</p>}
             </div>
             <br/>
             <button type="submit">送信</button>

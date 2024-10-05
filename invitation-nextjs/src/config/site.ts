@@ -13,6 +13,11 @@ export const siteConfig = {
             name: "Family Invitation",
             description: "Family invitation page",
             path: "/family-invitation",
+        },
+        thanks:{
+            name: "Thanks",
+            description: "Thanks page",
+            path: "/thanks",
         }
     },
     navItems: [

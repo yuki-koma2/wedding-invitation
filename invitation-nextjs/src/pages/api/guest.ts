@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import prisma from "@/lib/prisma";
-import { GuestSchema } from "@/components/GuestForm/guest.schema";
 import { ZodError } from "zod";
+import { GuestSchema } from "@/server/model/guest.schema";
 
 // POST /api/guest
 export default async function handle(
@@ -14,7 +14,6 @@ export default async function handle(
     }
 
     try {
-        // TODO リクエストボディのパースとバリデーション フロントと同じなので変えたい。
         const data = GuestSchema.parse(req.body);
 
         // データベースへの挿入

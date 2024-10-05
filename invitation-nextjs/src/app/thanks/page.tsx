@@ -1,24 +1,30 @@
 import Image from 'next/image';
+import React from "react";
 
 const ThanksPage = () => {
     return (
-        <main
-            className={`
-                bg-white bg-center bg-cover bg-fixed h-screen
-                bg-[url('/img/bg-2.jpg')]
-                `}
-            aria-label="結婚式の招待状の背景画像"
-        >
+        <main className={`bg-[#fffcf9]`}>
+            <section
+                className="
+                h-screen min-h-96 relative flex flex-1 shrink-0 items-start justify-center overflow-hidden bg-gray-100 py-16  md:py-20 xl:py-48
+                ">
+                <img src={`/img/342479DF-thanks.jpeg`}
+                     loading="lazy"
+                     alt="thanks"
+                     className="absolute inset-0 h-full w-full object-cover object-center"/>
 
-            <h1 className="font-petit text-6xl p-3">ご出席ありがとうございました</h1>
+                <div className="absolute inset-0 bg-gray-300 mix-blend-multiply"/>
 
+                <div className="relative flex flex-col p-4 sm:max-w-xl mt-20">
+                    <h1 className="font-petit text-6xl text-white">
+                        Thank you
+                    </h1>
 
-            <Image src={`/img/header.jpeg`}
-                 loading="lazy" alt="結婚指輪と花束"
-                   width={1920}
-                   height={1080}
-                 className="w-full object-cover object-center rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300"
-            />
+                    <p className="font-klee text-xl text-white text-center pt-3">
+                        当日は皆様にお会いできることを<br/>楽しみにしています
+                    </p>
+                </div>
+            </section>
         </main>
     )
 }
