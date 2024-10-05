@@ -6,12 +6,12 @@
 
 generator client_database {
   provider = "prisma-client-js"
-  output   = "./../node_modules/.prisma/client" // ./database/client_database に生成
+  output   = "./../node_modules/.prisma/client"
 }
 
 generator client_nextjs {
   provider = "prisma-client-js"
-  output   = "../../invitation-nextjs/node_modules/.prisma/client" // ./invitation-nextjs/node_modules/.prisma/client に生成
+  output   = "../../invitation-nextjs/node_modules/.prisma/client"
 }
 
 datasource db {

@@ -10,18 +10,17 @@ import { PrismaClient } from '@prisma/client'
 // Learn more:
 // https://pris.ly/d/help/next-js-best-practices
 
-
-// declare global {
-//     // グローバルオブジェクトに PrismaClient のインスタンスを保存
-//     var prisma: PrismaClient | undefined;
-// }
-
 const globalForPrisma = global as unknown as { prisma: PrismaClient }
 
 export const prisma = globalForPrisma.prisma || new PrismaClient({
-    log: ['query', 'info', 'warn', 'error'], // 必要に応じてログレベルを調整
+    log: process.env.NODE_ENV === 'production'
+        ? ['error']
+        : ['query', 'info', 'warn', 'error'],
 })
 
-if (process.env.NODE_ENV !== 'production') globalForPrisma.prisma = prisma
+if (process.env.NODE_ENV !== 'production') {
+    // 開発環境では、グローバルオブジェクトにPrismaClientインスタンスを保存
+    globalForPrisma.prisma = prisma;
+}
 
 export default prisma
