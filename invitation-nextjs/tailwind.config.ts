@@ -59,6 +59,7 @@ const config: Config = {
                 layout: {},
                 colors: {
                     primary: "#E5C2CE",
+                    secondary: "#7D696F",
                 }
             },
         },

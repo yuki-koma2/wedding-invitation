@@ -54,8 +54,8 @@ const GuestForm: React.FC = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)}>
-            <div className="my-1.5">
+        <form onSubmit={handleSubmit(onSubmit)} className="m-8">
+            <div className="py-4">
                 <RadioGroup
                     label="ご出席"
                     onValueChange={(value: string) => {
@@ -94,49 +94,51 @@ const GuestForm: React.FC = () => {
                     <p style={{color: 'red'}}>{errors.attendanceStatus.message}</p>
                 )}
             </div>
+            <div className="py-4">
+                <label>お名前</label>
+                <div className="flex row my-2">
+                    <Input
+                        className="m-1"
+                        label={"姓"}
+                        type="text"
+                        isInvalid={!!errors.lastName}
+                        color={errors.lastName ? "danger" : "default"}
+                        errorMessage={errors.lastName?.message ?? ""}
+                        {...register('lastName')}
 
-            <label>お名前</label>
-            <div className="flex row my-1.5">
-                <Input
-                    label={"姓"}
-                    type="text"
-                    isInvalid={!!errors.lastName}
-                    color={errors.lastName ? "danger" : "default"}
-                    errorMessage={errors.lastName?.message ?? ""}
-                    {...register('lastName')}
-
-                />
-
-                <Input
-                    label={"名"}
-                    type="text"
-                    isInvalid={!!errors.firstName}
-                    color={errors.firstName ? "danger" : "default"}
-                    errorMessage={errors.firstName?.message ?? ""}
-                    {...register('firstName')}
-                />
+                    />
+                    <Input
+                        className="m-1"
+                        label={"名"}
+                        type="text"
+                        isInvalid={!!errors.firstName}
+                        color={errors.firstName ? "danger" : "default"}
+                        errorMessage={errors.firstName?.message ?? ""}
+                        {...register('firstName')}
+                    />
+                </div>
+                <div className="flex row my-2">
+                    <Input
+                        className="m-1"
+                        label={"姓（ふりがな）"}
+                        type="text"
+                        isInvalid={!!errors.lastNameKana}
+                        color={errors.lastNameKana ? "danger" : "default"}
+                        errorMessage={errors.lastNameKana?.message ?? ""}
+                        {...register('lastNameKana')}
+                    />
+                    <Input
+                        className="m-1"
+                        label={"名（ふりがな）"}
+                        type="text"
+                        isInvalid={!!errors.firstNameKana}
+                        color={errors.firstNameKana ? "danger" : "default"}
+                        errorMessage={errors.firstNameKana?.message ?? ""}
+                        {...register('firstNameKana')}
+                    />
+                </div>
             </div>
-            <div className="flex row my-1.5">
-                <Input
-                    label={"姓（ふりがな）"}
-                    type="text"
-                    isInvalid={!!errors.lastNameKana}
-                    color={errors.lastNameKana ? "danger" : "default"}
-                    errorMessage={errors.lastNameKana?.message ?? ""}
-                    {...register('lastNameKana')}
-                />
-
-                <Input
-                    label={"名（ふりがな）"}
-                    type="text"
-                    isInvalid={!!errors.firstNameKana}
-                    color={errors.firstNameKana ? "danger" : "default"}
-                    errorMessage={errors.firstNameKana?.message ?? ""}
-                    {...register('firstNameKana')}
-                />
-            </div>
-
-            <div className="my-1.5 pt-">
+            <div className="py-4">
                 <RadioGroup
                     label="いずれかをお選びください"
                     onValueChange={(value: string) => {
@@ -169,9 +171,10 @@ const GuestForm: React.FC = () => {
                 {errors.side && <p style={{color: 'red'}}>{errors.side.message}</p>}
 
             </div>
-            <div className="my-1.5">
+            <div className="py-4">
                 <label>ご住所</label>
                 <Input
+                    className="m-1 pb-2"
                     label={"郵便番号"}
                     type="text"
                     isInvalid={!!errors.postalCode}
@@ -179,7 +182,7 @@ const GuestForm: React.FC = () => {
                     errorMessage={errors.postalCode?.message ?? ""}
                     {...register('postalCode')}
                 />
-                <div>
+                <div className="my-2">
                     <label>都道府県:</label>
                     <Controller
                         control={control}
@@ -221,6 +224,7 @@ const GuestForm: React.FC = () => {
 
 
                 <Input
+                    className="m-1"
                     label={"市区町村"}
                     type="text"
                     isInvalid={!!errors.city}
@@ -231,6 +235,7 @@ const GuestForm: React.FC = () => {
 
 
                 <Input
+                    className="m-1"
                     label={"住所詳細"}
                     type="text"
                     isInvalid={!!errors.addressLine}
@@ -240,17 +245,22 @@ const GuestForm: React.FC = () => {
                 />
 
             </div>
-            <div className="my-1.5 flex flex-col px-10 justify-center">
-                <label>アレルギー確認にご協力ください</label>
+            <div className="py-4 flex flex-col px-10 justify-center">
+                <label className="my-4">アレルギー確認にご協力ください</label>
                 <Link
                     isExternal
-                    className={buttonStyles({variant: "bordered", radius: "full", color: "primary"})}
+                    className={buttonStyles({
+                        variant: "bordered",
+                        radius: "full",
+                        color: "secondary",
+                        className: "m-1"
+                    })}
                     href={siteConfig.links.survey}
                 >
                     回答はこちらから
                 </Link>
                 <Checkbox
-                    className="text-amber-500"
+                    className="m-1"
                     isInvalid={!!errors.isCheck}
                     color={errors.isCheck ? "danger" : "default"}
                     onValueChange={(value: boolean) => {
@@ -260,8 +270,7 @@ const GuestForm: React.FC = () => {
                 {errors.isCheck && <p style={{color: 'red'}}>{errors.isCheck.message}</p>}
             </div>
             <br/>
-            <button type="submit">送信</button>
-
+            <Button type="submit">送信</Button>
         </form>
     );
 }
