@@ -15,6 +15,10 @@
               {
                 "name": "@/lib/prisma",
                 "message": "Prisma Client is for server-side use only. Do not use it on the client-side."
+              },
+              {
+                "name": "@/server/*",
+                "message": "Prisma Client is for server-side use only. Do not use it on the client-side."
               }
             ]
           }

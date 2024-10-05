@@ -9,7 +9,7 @@ z.setErrorMap(japaneseErrorMap)
 export const SideEnum = z.enum(['GROOM', 'BRIDE']);
 
 // 出欠ステータスのEnum
-export const AttendanceStatusEnum = z.enum(['ATTENDING', 'NOT_ATTENDING']);
+export const AttendanceStatusEnum = z.enum(['ATTENDING', 'NOT_ATTENDING', 'PENDING']);
 
 export const GuestSchema = z.object({
     id: z.number().int().positive().optional(), // 新規作成時は不要
@@ -33,7 +33,6 @@ export const GuestSchema = z.object({
     city: z.string().optional().or(z.literal('')),
     addressLine: z.string().optional().or(z.literal('')),
     attendanceStatus: AttendanceStatusEnum,
-    isCheck: z.boolean(),
 });
 
 export type Guest = z.infer<typeof GuestSchema>;
