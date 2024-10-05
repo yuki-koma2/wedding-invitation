@@ -1,6 +1,7 @@
 import React from 'react';
 import { Spacer } from "@nextui-org/react";
 import GuestForm from "@/components/GuestForm";
+import GallerySection from "@/components/Gallery";
 
 
 const InvitationPage = () => {
@@ -118,7 +119,7 @@ const InvitationPage = () => {
                     また お酒の入るご祝宴でございますので <br/>
                     ご来館には公共交通機関をご利用ください</p>
             </section>
-
+            <GallerySection/>
             <section
                 className="p-4 font-klee font-bold text-gray-500 text-center rounded-lg ">
                 <p className="my-10">お手数ではございますがご都合のほどを<br/><span
