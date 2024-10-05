@@ -81,7 +81,7 @@ const InvitationPage = () => {
                         <span>13時00分</span>
                     </p>
                     <p className="text-red-700">
-                        受付後 親族顔合わせを行いますので<br/>
+                        受付後 親族紹介を行いますので<br/>
                         <span className="font-bold">13時20分</span>までにはお越しください
                     </p>
                     <p className="flex">
@@ -94,7 +94,7 @@ const InvitationPage = () => {
                     </p>
                     <p className="flex">
                         <span className="w-24 text-right pr-4">場所：</span>
-                        <span>東京大神宮</span>
+                        <span>東京大神宮マツヤサロン</span>
                     </p>
                     <p className="flex">
                         <span className="w-24 text-right pr-4">住所：</span>

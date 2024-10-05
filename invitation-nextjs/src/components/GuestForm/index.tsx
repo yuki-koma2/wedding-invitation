@@ -255,7 +255,7 @@ function GuestForm() {
                 <Link
                     isExternal
                     className={buttonStyles({variant: "bordered", radius: "full", color: "primary"})}
-                    href={siteConfig.links.github}
+                    href={siteConfig.links.survey}
                 >
                     回答はこちらから
                 </Link>

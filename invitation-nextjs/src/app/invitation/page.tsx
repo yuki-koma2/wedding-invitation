@@ -88,7 +88,7 @@ const InvitationPage = () => {
                     </p>
                     <p className="flex">
                         <span className="w-24 text-right pr-4">場所：</span>
-                        <span>東京大神宮</span>
+                        <span>東京大神宮マツヤサロン</span>
                     </p>
                     <p className="flex">
                         <span className="w-24 text-right pr-4">住所：</span>

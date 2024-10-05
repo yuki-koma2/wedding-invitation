@@ -81,5 +81,6 @@ export const siteConfig = {
         docs: "https://nextui.org",
         discord: "https://discord.gg/9b6yyZKmH4",
         sponsor: "https://patreon.com/jrgarciadev",
+        survey: 'https://caneat.jp/44/events/14989/attendances/answer?code=8e19ef16&locale=ja'
     },
 };
