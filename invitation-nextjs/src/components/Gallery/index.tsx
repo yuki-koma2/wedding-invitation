@@ -1,5 +1,6 @@
 'use client';
 import React, { useState, useEffect } from "react";
+import Icon from "@/components/icon";
 
 const GallerySection = () => {
     const [selectedImage, setSelectedImage] = useState<string|null>(null);
@@ -29,7 +30,8 @@ const GallerySection = () => {
     ];
 
     return (
-        <section className="p-4">
+        <section className="flex justify-center flex-col items-center font-klee font-bold text-gray-500 text-center p-4">
+            <h1 className="font-petit text-3xl text-gray-500 py-4"><Icon/>Photo Gallery<Icon/></h1>
             <div className="grid grid-cols-3 gap-2">
                 {images.map((src, index) => (
                     <div

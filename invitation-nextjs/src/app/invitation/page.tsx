@@ -8,10 +8,7 @@ import InformationSection from "@/components/Information";
 const InvitationPage = () => {
     return (
         <main
-            className={`bg-white bg-center bg-cover bg-fixed
-                        sm:bg-contain md:bg-cover 
-                        bg-[url('/img/bg-2.jpg')]`}
-            aria-label="結婚式の招待状の背景画像"
+            className={`bg-[#fffcf9]`}
         >
 
             <section
