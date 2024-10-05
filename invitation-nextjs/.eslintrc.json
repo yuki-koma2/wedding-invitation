@@ -14,7 +14,7 @@
             "paths": [
               {
                 "name": "@/lib/prisma",
-                "message": "Prisma Client はサーバーサイド専用です。クライアントサイドでは使用しないでください。"
+                "message": "Prisma Client is for server-side use only. Do not use it on the client-side."
               }
             ]
           }
