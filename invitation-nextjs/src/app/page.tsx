@@ -1,11 +1,3 @@
-import {Link} from "@nextui-org/link";
-import {Snippet} from "@nextui-org/snippet";
-import {Code} from "@nextui-org/code";
-import {button as buttonStyles} from "@nextui-org/theme";
-
-import {siteConfig} from "@/config/site";
-import {title, subtitle} from "@/components/primitives";
-import {GithubIcon} from "@/components/icons";
 import MessageSection from "@/components/Message";
 import InformationSection from "@/components/Information";
 import GallerySection from "@/components/Gallery";
@@ -45,7 +37,7 @@ export default function Home() {
                 </div>
             </section>
             <MessageSection/>
-            <InformationSection />
+            <InformationSection/>
             <GallerySection/>
             <section
                 className="p-4 font-klee font-bold text-gray-500 text-center rounded-lg ">
