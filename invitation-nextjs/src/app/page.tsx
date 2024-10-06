@@ -1,11 +1,3 @@
-import {Link} from "@nextui-org/link";
-import {Snippet} from "@nextui-org/snippet";
-import {Code} from "@nextui-org/code";
-import {button as buttonStyles} from "@nextui-org/theme";
-
-import {siteConfig} from "@/config/site";
-import {title, subtitle} from "@/components/primitives";
-import {GithubIcon} from "@/components/icons";
 import MessageSection from "@/components/Message";
 import InformationSection from "@/components/Information";
 import GallerySection from "@/components/Gallery";
@@ -45,7 +37,7 @@ export default function Home() {
                 </div>
             </section>
             <MessageSection/>
-            <InformationSection />
+            <InformationSection/>
             <GallerySection/>
             <section
                 className="p-4 font-klee font-bold text-gray-500 text-center rounded-lg ">
@@ -53,42 +45,6 @@ export default function Home() {
                     className="font-bold">11月2日(土)</span>までにご一報賜りますようお願い申し上げます</p>
                 <GuestForm/>
             </section>
-            <hr />
-            <footer className="flex flex-col items-center justify-center gap-4 py-8 md:py-10 bg-pink-50">
-                <div className="flex gap-3">
-                    <Link
-                        className={buttonStyles({
-                            color: "primary",
-                            radius: "full",
-                            variant: "shadow",
-                        }) + "bg-gradient-to-tr from-pink-500 to-yellow-500 text-white shadow-lg"}
-                        href={siteConfig.navigation.invitation.path}
-                    >
-                        友人向け
-                    </Link>
-                    <Link
-                        className={buttonStyles({
-                            color: "primary",
-                            radius: "full",
-                            variant: "shadow",
-                        }) + "bg-gradient-to-tr from-pink-500 to-yellow-500 text-white shadow-lg"}
-                        href={siteConfig.navigation.familyInvitation.path}
-                    >
-                        親族向け
-                    </Link>
-                    <Link
-                        className={buttonStyles({
-                            color: "primary",
-                            radius: "full",
-                            variant: "shadow",
-                        }) + "bg-gradient-to-tr from-pink-500 to-yellow-500 text-white shadow-lg"}
-                        href={siteConfig.navigation.thanks.path}
-                    >
-                        thanks
-                    </Link>
-
-                </div>
-            </footer>
         </main>
     );
 }

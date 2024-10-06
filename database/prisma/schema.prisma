@@ -64,7 +64,7 @@ model Guest {
   /// 新郎側か新婦側かを示す
   side             Side
   /// 郵便番号
-  postalCode       String?          @db.VarChar(7)
+  postalCode       String?          @db.VarChar(8)
   /// 都道府県コード（必須）
   prefectureCode   Int
   /// 市区町村

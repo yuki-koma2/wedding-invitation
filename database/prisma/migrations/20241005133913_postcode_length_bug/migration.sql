@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "Guest" ALTER COLUMN "postalCode" SET DATA TYPE VARCHAR(8);
