@@ -53,42 +53,6 @@ export default function Home() {
                     className="font-bold">11月2日(土)</span>までにご一報賜りますようお願い申し上げます</p>
                 <GuestForm/>
             </section>
-            <hr />
-            <footer className="flex flex-col items-center justify-center gap-4 py-8 md:py-10 bg-pink-50">
-                <div className="flex gap-3">
-                    <Link
-                        className={buttonStyles({
-                            color: "primary",
-                            radius: "full",
-                            variant: "shadow",
-                        }) + "bg-gradient-to-tr from-pink-500 to-yellow-500 text-white shadow-lg"}
-                        href={siteConfig.navigation.invitation.path}
-                    >
-                        友人向け
-                    </Link>
-                    <Link
-                        className={buttonStyles({
-                            color: "primary",
-                            radius: "full",
-                            variant: "shadow",
-                        }) + "bg-gradient-to-tr from-pink-500 to-yellow-500 text-white shadow-lg"}
-                        href={siteConfig.navigation.familyInvitation.path}
-                    >
-                        親族向け
-                    </Link>
-                    <Link
-                        className={buttonStyles({
-                            color: "primary",
-                            radius: "full",
-                            variant: "shadow",
-                        }) + "bg-gradient-to-tr from-pink-500 to-yellow-500 text-white shadow-lg"}
-                        href={siteConfig.navigation.thanks.path}
-                    >
-                        thanks
-                    </Link>
-
-                </div>
-            </footer>
         </main>
     );
 }
