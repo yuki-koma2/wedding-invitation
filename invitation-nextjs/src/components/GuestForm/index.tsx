@@ -169,8 +169,33 @@ const GuestForm: React.FC = () => {
                     </div>
                 </RadioGroup>
                 {errors.side && <p style={{color: 'red'}}>{errors.side.message}</p>}
-
             </div>
+            <br/>
+            <div className="py-4 flex flex-col px-10 justify-center">
+                <label className="my-4">アレルギー確認にご協力ください</label>
+                <Link
+                    isExternal
+                    className={buttonStyles({
+                        variant: "bordered",
+                        radius: "full",
+                        color: "secondary",
+                        className: "m-1"
+                    })}
+                    href={siteConfig.links.survey}
+                >
+                    回答はこちらから
+                </Link>
+                <Checkbox
+                    className="m-1"
+                    isInvalid={!!errors.isCheck}
+                    color={errors.isCheck ? "danger" : "default"}
+                    onValueChange={(value: boolean) => {
+                        setValue('isCheck', value);
+                    }}
+                >回答済みの場合はチェックしてください</Checkbox>
+                {errors.isCheck && <p style={{color: 'red'}}>{errors.isCheck.message}</p>}
+            </div>
+            <br/>
             <div className="py-4">
                 <label>ご住所</label>
                 <Input
@@ -244,30 +269,6 @@ const GuestForm: React.FC = () => {
                     {...register('addressLine')}
                 />
 
-            </div>
-            <div className="py-4 flex flex-col px-10 justify-center">
-                <label className="my-4">アレルギー確認にご協力ください</label>
-                <Link
-                    isExternal
-                    className={buttonStyles({
-                        variant: "bordered",
-                        radius: "full",
-                        color: "secondary",
-                        className: "m-1"
-                    })}
-                    href={siteConfig.links.survey}
-                >
-                    回答はこちらから
-                </Link>
-                <Checkbox
-                    className="m-1"
-                    isInvalid={!!errors.isCheck}
-                    color={errors.isCheck ? "danger" : "default"}
-                    onValueChange={(value: boolean) => {
-                        setValue('isCheck', value);
-                    }}
-                >回答済みの場合はチェックしてください</Checkbox>
-                {errors.isCheck && <p style={{color: 'red'}}>{errors.isCheck.message}</p>}
             </div>
             <br/>
             <Button type="submit">送信</Button>
