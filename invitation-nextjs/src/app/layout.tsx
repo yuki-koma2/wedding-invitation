@@ -25,7 +25,7 @@ export default function RootLayout({
             <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700;800&display=swap"
                   rel="stylesheet"/>
             <link href="https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&display=swap" rel="stylesheet"/>
-            <meta property="og:image" content={'https://www.komatsu-sawaki.com/img/flower.jpeg'}/>
+            <meta property="og:image" content={'https://www.komatsu-sawaki.com/api/og'}/>
         </head>
         <body className={inter.className}>
         <Providers>
