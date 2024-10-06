@@ -8,7 +8,7 @@ const ThanksPage = () => {
         <main className={`bg-[#fffcf9]`}>
             <section
                 className="
-                h-screen min-h-96 relative flex flex-1 flex-col shrink-0 justify-between overflow-hidden bg-gray-100 py-16 md:py-20 xl:py-48
+                h-screen min-h-96 relative flex flex-1 flex-col shrink-0 justify-between overflow-hidden bg-gray-100 py-16 md:py-20 xl:py-48 items-center
                 ">
                 <img src={`/img/342479DF-thanks.jpeg`}
                      loading="lazy"
@@ -25,7 +25,7 @@ const ThanksPage = () => {
                         当日は皆様にお会いできることを<br/>楽しみにしております
                     </p>
                 </div>
-                <div className="flex justify-center">
+                <div className="flex justify-center max-w-xl w-full">
                     <Link
                         isExternal
                         className={buttonStyles({
