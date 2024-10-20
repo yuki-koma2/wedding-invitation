@@ -7,14 +7,14 @@ const prisma = new PrismaClient();
 async function exportDataToCSV() {
     const guests = await prisma.guest.findMany({
         include: {
-            prefecture: true, // 関連する都道府県コードのデータも含める
+            prefecture: true,
         },
     });
 
     console.log('Exporting data to CSV...');
-    // CSVライターを設定
+
     const csvWriter = createCsvWriter({
-        path: './outputs/guests.csv', // 出力するCSVファイルのパス
+        path: './outputs/guests.csv',
         header: [
             { id: 'id', title: 'ID' },
             { id: 'firstName', title: 'First Name' },
@@ -30,41 +30,6 @@ async function exportDataToCSV() {
         ]
     });
 
-    // guests sample data
-    // const guests = [
-    //     {
-    //         id: 1,
-    //         firstName: 'Taro',
-    //         lastName: 'Yamada',
-    //         firstNameKana: 'タロウ',
-    //         lastNameKana: 'ヤマダ',
-    //         side: 'bride',
-    //         postalCode: '123-4567',
-    //         prefecture: {
-    //             name: 'Tokyo'
-    //         },
-    //         city: 'Shinjuku',
-    //         addressLine: '1-2-3',
-    //         attendanceStatus: 'attending'
-    //     },
-    //     {
-    //         id: 2,
-    //         firstName: 'Hanako',
-    //         lastName: 'Suzuki',
-    //         firstNameKana: 'ハナコ',
-    //         lastNameKana: 'スズキ',
-    //         side: 'groom',
-    //         postalCode: '234-5678',
-    //         prefecture: {
-    //             name: 'Osaka'
-    //         },
-    //         city: 'Umeda',
-    //         addressLine: '4-5-6',
-    //         attendanceStatus: 'not attending'
-    //     }
-    // ];
-
-    // prefectureをフラットにしてCSVに書き込むデータを準備
     const records = guests.map(guest => ({
         id: guest.id,
         firstName: guest.firstName,
@@ -79,7 +44,6 @@ async function exportDataToCSV() {
         attendanceStatus: guest.attendanceStatus,
     }));
 
-    // データを書き込む
     await csvWriter.writeRecords(records);
 }
 
