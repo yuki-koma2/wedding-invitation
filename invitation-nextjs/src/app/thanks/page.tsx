@@ -1,4 +1,5 @@
 import React from "react";
+import Image from 'next/image';
 import { Link } from "@nextui-org/link";
 import { button as buttonStyles } from "@nextui-org/theme";
 import { siteConfig } from "@/config/site";
@@ -10,10 +11,12 @@ const ThanksPage = () => {
                 className="
                 h-screen min-h-96 relative flex flex-1 flex-col shrink-0 justify-between overflow-hidden bg-gray-100 py-16 md:py-20 xl:py-48 items-center
                 ">
-                <img src={`/img/342479DF-thanks.jpeg`}
+                <Image src={`/img/342479DF-thanks.jpeg`}
                      loading="lazy"
                      alt="thanks"
-                     className="absolute inset-0 h-full w-full object-cover object-center"/>
+                     className="absolute inset-0 h-full w-full object-cover object-center"
+                     layout="fill"
+                     objectFit="cover"/>
                 <div className="absolute inset-0 bg-gray-300 mix-blend-multiply"/>
 
                 <div className="relative flex flex-col p-4 sm:max-w-xl mt-20">
