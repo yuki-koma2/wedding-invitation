@@ -1,5 +1,6 @@
 'use client';
 import React, { useState, useEffect } from "react";
+import Image from 'next/image';
 import Icon from "@/components/icon";
 import { Button } from "@nextui-org/react";
 
@@ -46,11 +47,13 @@ const GallerySection = () => {
                         key={index}
                         className="aspect-square overflow-hidden"
                     >
-                        <img
+                        <Image
                             src={src}
                             alt={`Image ${index + 1}`}
                             className="cursor-pointer object-cover w-full h-full"
                             onClick={() => setSelectedImage(src)}
+                            layout="fill"
+                            objectFit="cover"
                         />
                     </div>
                 ))}
@@ -62,10 +65,12 @@ const GallerySection = () => {
                         isModalVisible ? "opacity-100" : "opacity-0"
                     }`}
                 >
-                    <img
+                    <Image
                         src={selectedImage}
                         alt="Selected"
                         className="max-w-3xl max-h-screen"
+                        layout="fill"
+                        objectFit="cover"
                     />
                     <Button
                         onClick={closeModal}

@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import GuestForm from "@/components/GuestForm";
 import GallerySection from "@/components/Gallery";
 import MessageSection from "@/components/Message";
@@ -15,10 +16,12 @@ const InvitationPage = () => {
                 className="
                 h-screen min-h-96 relative flex flex-1 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-gray-100 py-16 shadow-lg md:py-20 xl:py-48
                 ">
-                <img src={`/img/header.jpeg`}
+                <Image src={`/img/header.jpeg`}
                      loading="lazy"
                      alt="結婚指輪と花束"
-                     className="absolute inset-0 h-full w-full object-cover object-center"/>
+                     className="absolute inset-0 h-full w-full object-cover object-center"
+                     layout="fill"
+                     objectFit="cover"/>
                 <div className="absolute inset-0 bg-gray-300 mix-blend-multiply"/>
 
                 <div className="relative flex flex-col items-center p-4 sm:max-w-xl">
